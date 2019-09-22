@@ -15,10 +15,11 @@ class DataBase
     public function getConnection()
     {
         try {
-            $this->conn = new PDO("mysql:host=" . $this->host . ";db_name=" . $this->db_name, $this->user_name, $this->password);
+            $this->conn = new PDO("mysql:host=" . $this->host . ";dbname=" . $this->db_name, $this->user_name, $this->password);
         } catch (PDOEXception $ex) {
             throw new Exception("Danger" . $ex);
         }
         return $this->conn;
     }
 }
+// used to get mysql database connection
